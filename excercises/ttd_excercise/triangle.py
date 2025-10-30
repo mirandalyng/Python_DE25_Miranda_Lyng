@@ -1,3 +1,4 @@
+
 from numbers import Number
 #Skeleton for the Triangle class 
 class Triangle: 
@@ -31,13 +32,19 @@ class Triangle:
     def height(self, value): 
         if not isinstance(value, Number):
             raise TypeError("Must be a number")
-        
+        if value <= 0:
+            raise ValueError("Height must be larger than 0")
+        if value == True or value == False:
+            raise TypeError("Height must be a number")
+    
         self._height = value
 
 
     @property
     def area(self): 
-        pass 
+        return (self.base * self.height)/ 2
+
+    
 
     # @property
     # def perimeter(self): 
@@ -56,7 +63,4 @@ class Triangle:
 
 
     def __repr__(self): 
-        pass 
-
-    
-
+        pass
